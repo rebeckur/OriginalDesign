@@ -11,7 +11,7 @@ void draw()
 			movingFishLeft();
 		} else {
 			movingFishRight();
-		}
+		} //for moving the direction of the fish based on user movement
 	}
 
 	if (octopus){
@@ -23,22 +23,29 @@ void movingFishLeft()
 {
 	fill(242, 164, 39);
 	noStroke();
-	ellipse(mouseX, mouseY, 70, 50);
-	triangle(mouseX+20, mouseY, mouseX+40, mouseY-30, mouseX+40, mouseY+30);
+	ellipse(mouseX, mouseY, 70, 50); //body
+	triangle(mouseX+20, mouseY, mouseX+40, mouseY-30, mouseX+40, mouseY+30); //fins
 }
 
 void movingFishRight()
 {
 	fill(242, 164, 39);
 	noStroke();
-	ellipse(mouseX, mouseY, 70, 50);
-	triangle(mouseX-20, mouseY, mouseX-40, mouseY-30, mouseX-40, mouseY+30);
+	ellipse(mouseX, mouseY, 70, 50); //body
+	triangle(mouseX-20, mouseY, mouseX-40, mouseY-30, mouseX-40, mouseY+30); //fins
 }
 
 void cuteOctopus()
 {
-	fill(255);
-	ellipse(mouseX,mouseY,10,10);
+	fill(255, 102, 102);
+	ellipse(mouseX,mouseY,50,60); //head of octopus
+	fill(0);
+	ellipse(mouseX-10, mouseY-5, 7,7);
+	ellipse(mouseX+10, mouseY-5, 7,7); //eyes
+	fill(255, 102, 102);
+	for (int i = 0; i < 40; i+= 10){
+		ellipse(mouseX - 15 + i, mouseY + 35, 8, 30);
+	} //tentacles
 }
 
 void bubbles()
@@ -49,8 +56,14 @@ void bubbles()
 
 boolean fish = true;
 boolean octopus = false;
+
 void mousePressed ()
 {
-	fish = false;
-	octopus = true;
+	if (fish){
+		fish = false;
+		octopus = true;
+	} else if (octopus){
+		octopus = false;
+		fish = true;
+	}
 }
