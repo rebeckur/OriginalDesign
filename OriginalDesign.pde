@@ -9,7 +9,7 @@ void draw()
 	if (fish){
 		if (mouseX - pmouseX > 0) {
 			movingFishLeft();
-		} else if (mouseX - pmouse < 0){
+		} else if (mouseX - pmouseX < 0){
 			movingFishRight();
 		} //for moving the direction of the fish based on user mouse
 	}
