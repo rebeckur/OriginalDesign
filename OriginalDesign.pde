@@ -7,11 +7,11 @@ void draw()
 	background(105, 181, 219);
 	bubbles();
 	if (fish){
-		if (mouseX < pmouseX) {
+		if (mouseX - pmouseX > 0) {
 			movingFishLeft();
-		} else {
+		} else if (mouseX - pmouse < 0){
 			movingFishRight();
-		} //for moving the direction of the fish based on user movement
+		} //for moving the direction of the fish based on user mouse
 	}
 
 	if (octopus){
