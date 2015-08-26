@@ -25,7 +25,8 @@ void movingFishLeft()
 	noStroke();
 	ellipse(mouseX, mouseY, 70, 50); //body
 	fill(0); //eye color
-	ellipse(mouseX-15, mouseY+5, 7,7); //eyes
+	ellipse(mouseX-15, mouseY-5, 7,7); //eyes
+	fill(242, 164, 39);//fish color
 	triangle(mouseX+20, mouseY, mouseX+40, mouseY-30, mouseX+40, mouseY+30); //fins
 }
 
@@ -35,7 +36,7 @@ void movingFishRight()
 	noStroke();
 	ellipse(mouseX, mouseY, 70, 50); //body
 	fill(0); //eye color
-	ellipse(mouseX+15, mouseY+5, 7,7); //eyes
+	ellipse(mouseX+15, mouseY-5, 7,7); //eyes
 	fill(242, 164, 39);//fish color
 	triangle(mouseX-20, mouseY, mouseX-40, mouseY-30, mouseX-40, mouseY+30); //fins
 }
