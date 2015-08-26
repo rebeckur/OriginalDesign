@@ -9,14 +9,16 @@ void draw()
 	if (fish){
 		if (mouseX - pmouseX < 0) {
 			movingFishLeft();
-		} else {
+		} else if (mouseX - pmouseX > 0){
 			movingFishRight();
-		} //for moving the direction of the fish based on user mouse
-	}
+		} else {
+			statFish();
+		}
+	} //draws fish, but changes direction based on mouse
 
 	if (octopus){
 		cuteOctopus();
-	}
+	} //draws octopus
 }
 
 void movingFishLeft()
@@ -24,10 +26,12 @@ void movingFishLeft()
 	fill(242, 164, 39);//fish color
 	noStroke();
 	ellipse(mouseX, mouseY, 70, 50); //body
+	fill(255, 134, 33);//fin color
+	triangle(mouseX, mouseY, mouseX+15, mouseY-15, mouseX+15, mouseY+15);//fin
 	fill(0); //eye color
 	ellipse(mouseX-15, mouseY-5, 7,7); //eyes
 	fill(242, 164, 39); //fish color
-	triangle(mouseX+20, mouseY, mouseX+40, mouseY-30, mouseX+40, mouseY+30); //fins
+	triangle(mouseX+20, mouseY, mouseX+40, mouseY-30, mouseX+40, mouseY+30); //tail
 }
 
 void movingFishRight()
@@ -35,10 +39,25 @@ void movingFishRight()
 	fill(242, 164, 39);//fish color
 	noStroke();
 	ellipse(mouseX, mouseY, 70, 50); //body
+	fill(255, 134, 33);//fin color
+	triangle(mouseX, mouseY, mouseX-15, mouseY-15, mouseX-15, mouseY+15);//fin
 	fill(0); //eye color
 	ellipse(mouseX+15, mouseY-5, 7,7); //eyes
 	fill(242, 164, 39);//fish color
-	triangle(mouseX-20, mouseY, mouseX-40, mouseY-30, mouseX-40, mouseY+30); //fins
+	triangle(mouseX-20, mouseY, mouseX-40, mouseY-30, mouseX-40, mouseY+30); //tail
+}
+
+void statFish()
+{
+	fill(255, 134, 33);//fin color
+	triangle(mouseX-10, mouseY, mouseX-25, mouseY-15, mouseX-25, mouseY+15);//left fin
+	triangle(mouseX+10, mouseY, mouseX+25, mouseY-15, mouseX+25, mouseY+15);//right fin
+	fill(242, 164, 39);//fish color
+	triangle(mouseX+5, mouseY, mouseX-5, mouseY, mouseX-5, mouseY-40);//tail
+	ellipse(mouseX, mouseY, 45, 50); //body
+	fill(0); //eye color
+	ellipse(mouseX+10, mouseY-5, 7,7); //eyes
+	ellipse(mouseX-10, mouseY-5, 7,7); //eyes
 }
 
 void cuteOctopus()
