@@ -57,7 +57,7 @@ void bubbles()
 {
 	fill(162, 217, 245, 150);
 //	for (int i = 10; i < 100; i += 10){
-		ellipse(100+i, 20+i, 15, 15);
+		ellipse(100, 20, 15, 15);
 //	{
 }
 
