@@ -13,11 +13,10 @@ body {
 }
 
 header {
-	
+    font-family: 'Amatic SC', cursive;
 }
 
 footer {
 	font-style: italic;
 	font-size: 90%;
 }
-
