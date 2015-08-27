@@ -69,14 +69,22 @@ void cuteOctopus()
 	ellipse(mouseX+10, mouseY-5, 7,7); //eyes
 	fill(255, 102, 102);
 	for (int i = 0; i < 40; i+= 10){
-		ellipse(mouseX - 15 + i, mouseY + 35, 8, 30);
+		ellipse(mouseX - 15 + i, mouseY + 35, 7, 30);
 	} //tentacles
 }
+
+int bubbleX = 50;
+int bubbleY = 50;
 
 void bubbles()
 {
 	fill(162, 217, 245, 150);
-	ellipse(100, 20, 15, 15);
+	while(bubbleY < 300)
+	{
+		ellipse(bubbleX, bubbleY, 15, 15);
+		bubbleY += 45;
+		bubbleX += (int)(Math.random()*151)-50;
+	}
 }
 
 boolean fish = true;
